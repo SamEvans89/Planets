@@ -2,6 +2,7 @@ public class main
 {
     public static void main(String args[])
     {
+        //Creating the planets and the solarsystem object.
         SolarSystem f = new SolarSystem(300,300);
         Planet[] planets = new Planet[3];
         planets[0] = new Planet(100,0,10,"BLUE",f,2); //earth
@@ -11,11 +12,14 @@ public class main
         //drawing the sun
         f.drawSolarObject(0,0,20,"YELLOW"); //the sun (centerpoint)
 
+        //Permanent loop
         while (true)
         {
+            //drawing the sun in the centre
             f.drawSolarObject(0,0,20,"YELLOW");
             for(Planet p:planets)
             {
+                //iterating through the set of planets/moons etc. that we have and drawing them, as well as changing their speeds.
                 p.draw();
                 p.Orbit(p.getSpeed());
             }
