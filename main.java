@@ -2,17 +2,21 @@ public class main
 {
     public static void main(String args[])
     {
-        int earth_distance_around = 0;
         SolarSystem f = new SolarSystem(300,300);
-        f.drawSolarObject(0,0,20,"YELLOW");
-        f.drawSolarObject(100,earth_distance_around,10,"BLUE");
+        Planet earth = new Planet(100,0,10,"BLUE",f,2);
+        Planet mars = new Planet(65,0,5,"RED",f,1);
 
-        while (1==1)
+        //drawing the sun
+        f.drawSolarObject(0,0,20,"YELLOW");
+
+        while (true)
         {
             f.drawSolarObject(0,0,20,"YELLOW");
-            f.drawSolarObject(100,earth_distance_around,10,"BLUE");
+            earth.draw();
+            mars.draw();
             f.finishedDrawing();
-            earth_distance_around--;
+            earth.Orbit();
+            mars.Orbit();
 
         }
     }

@@ -5,23 +5,31 @@ public class Planet
     int diameter;
     String colour;
     SolarSystem sys;
+    int orbit_speed;
 
-    public Planet(int d, int a, int dia, String c, SolarSystem s)
+    public Planet(int d, int a, int dia, String c, SolarSystem s, int o)
     {
         distance_from_sun = d;
         angle = a;
         diameter = dia;
         colour = c;
         sys = s;
+        orbit_speed = o;
     }
 
     public void Orbit()
     {
-        angle++;
+        //rotating clockwise
+        angle-= orbit_speed;
     }
 
     public int getAngle()
     {
         return(angle);
+    }
+
+    public void draw()
+    {
+        sys.drawSolarObject(distance_from_sun,angle,diameter,colour);
     }
 }
