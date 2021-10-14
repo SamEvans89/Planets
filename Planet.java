@@ -53,4 +53,19 @@ public class Planet
     {
         return orbit_speed;
     }
+
+    public int getAngle()
+    {
+        return angle;
+    }
+
+    public int getDistance()
+    {
+        return distance_from_sun;
+    }
+
+    public int getDiameter()
+    {
+        return diameter;
+    }
 }
